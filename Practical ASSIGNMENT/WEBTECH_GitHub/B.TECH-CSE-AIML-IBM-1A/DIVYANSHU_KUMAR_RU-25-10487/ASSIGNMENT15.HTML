@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pyramid Pattern using Nested Loop</title>
+
+    <!-- Minimal CSS -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            padding: 20px;
+            text-align: center;
+        }
+
+        pre {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            display: inline-block;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Pyramid Pattern using Nested Loop</h2>
+
+    <pre id="output"></pre>
+
+    <!-- JavaScript -->
+    <script>
+        let rows = 5;
+        let pattern = "";
+
+        for (let i = 1; i <= rows; i++) {
+
+            // Print spaces
+            for (let space = 1; space <= rows - i; space++) {
+                pattern += "  ";
+            }
+
+            // Print stars
+            for (let star = 1; star <= i; star++) {
+                pattern += "* ";
+            }
+
+            pattern += "\n";
+        }
+
+        document.getElementById("output").innerText = pattern;
+    </script>
+
+</body>
+</html>

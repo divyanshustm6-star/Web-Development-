@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Object Property Iteration</title>
+
+    <!-- Minimal CSS -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            padding: 20px;
+            text-align: center;
+        }
+
+        #output {
+            background: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            max-width: 350px;
+            margin: auto;
+            line-height: 1.6;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Object Property Iteration (for...in)</h2>
+
+    <div id="output"></div>
+
+    <!-- JavaScript -->
+    <script>
+        const student = {
+            Name: "Divyanshu Kumar",
+            Course: "B.Tech CSE (AI & ML)",
+            Year: "1st Year",
+            University: "Rungta International Skills University "
+        };
+
+        const outputDiv = document.getElementById("output");
+
+        for (let key in student) {
+            outputDiv.innerHTML += key + " : " + student[key] + "<br>";
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Buzz Number Checker</title>
+
+    <!-- Minimal CSS -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            padding: 20px;
+            text-align: center;
+        }
+
+        input, button {
+            padding: 8px;
+            margin: 5px;
+        }
+
+        #result {
+            margin-top: 15px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Buzz Number Checker</h2>
+
+    <input type="number" id="num" placeholder="Enter a number">
+    <button onclick="checkBuzz()">Check</button>
+
+    <div id="result"></div>
+
+    <!-- JavaScript -->
+    <script>
+        function checkBuzz() {
+            let number = document.getElementById("num").value;
+            let resultDiv = document.getElementById("result");
+
+            if (number === "") {
+                resultDiv.innerText = "Please enter a number.";
+                return;
+            }
+
+            number = Number(number);
+
+            if (number % 7 === 0 || number % 10 === 7) {
+                resultDiv.innerText = "Buzz Number";
+            } else {
+                resultDiv.innerText = "Not a Buzz Number";
+            }
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>3-Digit Armstrong Numbers</title>
+
+    <!-- Minimal CSS -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            padding: 20px;
+            text-align: center;
+        }
+
+        #output {
+            background: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            max-width: 300px;
+            margin: auto;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>3-Digit Armstrong Numbers</h2>
+
+    <div id="output"></div>
+
+    <!-- JavaScript -->
+    <script>
+        const outputDiv = document.getElementById("output");
+        outputDiv.innerHTML = "<strong>Armstrong Numbers:</strong><br>";
+
+        for (let num = 100; num <= 999; num++) {
+            let sum = 0;
+            let temp = num;
+
+            while (temp > 0) {
+                let digit = temp % 10;
+                sum += digit * digit * digit;
+                temp = Math.floor(temp / 10);
+            }
+
+            if (sum === num) {
+                outputDiv.innerHTML += num + "<br>";
+            }
+        }
+    </script>
+
+</body>
+</html>

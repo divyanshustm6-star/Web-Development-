@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dynamic To-Do List</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            margin-top: 50px;
+        }
+        .container {
+            background: white;
+            padding: 20px 25px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            width: 350px;
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 15px;
+        }
+        #taskInput {
+            width: 70%;
+            padding: 8px;
+        }
+        #addBtn {
+            padding: 9px 12px;
+            cursor: pointer;
+        }
+        ul {
+            list-style: none;
+            padding-left: 0;
+            margin-top: 15px;
+        }
+        li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #f9f9f9;
+            padding: 8px 10px;
+            margin-bottom: 8px;
+            border-radius: 4px;
+        }
+        .deleteBtn {
+            background: #ff4d4d;
+            border: none;
+            color: white;
+            padding: 4px 8px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        .deleteBtn:hover {
+            background: #e63939;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>To-Do List</h2>
+
+    <!-- Input and button -->
+    <input type="text" id="taskInput" placeholder="Enter a task">
+    <button id="addBtn">Add</button>
+
+    <!-- List -->
+    <ul id="taskList"></ul>
+</div>
+
+<script>
+    const addBtn = document.getElementById("addBtn");
+    const taskInput = document.getElementById("taskInput");
+    const taskList = document.getElementById("taskList");
+
+    // Add task on button click
+    addBtn.addEventListener("click", addTask);
+
+    // Also add task when user presses Enter in input
+    taskInput.addEventListener("keyup", function(event) {
+        if (event.key === "Enter") {
+            addTask();
+        }
+    });
+
+    function addTask() {
+        const taskText = taskInput.value.trim();
+
+        if (taskText === "") {
+            alert("Please enter a task");
+            return;
+        }
+
+        // Create <li> element
+        const li = document.createElement("li");
+
+        // Create span for task text
+        const span = document.createElement("span");
+        span.textContent = taskText;
+
+        // Create delete button
+        const deleteBtn = document.createElement("button");
+        deleteBtn.textContent = "Delete";
+        deleteBtn.className = "deleteBtn";
+
+        // Add delete functionality
+        deleteBtn.addEventListener("click", function () {
+            taskList.removeChild(li);  // Remove this task
+        });
+
+        // Append span and button to li
+        li.appendChild(span);
+        li.appendChild(deleteBtn); 
+        
+
+        // Add li to the list
+        taskList.appendChild(li);
+
+        // Clear input
+        taskInput.value = "";
+        taskInput.focus();
+    }
+</script>
+
+</body>
+</html>

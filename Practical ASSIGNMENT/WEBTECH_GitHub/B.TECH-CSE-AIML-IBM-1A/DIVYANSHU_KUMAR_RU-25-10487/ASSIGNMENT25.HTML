@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM Create & Manipulate</title>
+
+    <!-- Minimal CSS -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            padding: 20px;
+            text-align: center;
+        }
+
+        #container {
+            background: #fff;
+            padding: 15px;
+            width: 300px;
+            margin: auto;
+            border-radius: 5px;
+        }
+
+        .item {
+            padding: 8px;
+            margin: 5px 0;
+            background: #e3f2fd;
+            border-radius: 4px;
+        }
+
+        button {
+            padding: 6px 10px;
+            margin: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>DOM Element Creation & Manipulation</h2>
+
+    <div id="container">
+        <p class="item">Initial Item</p>
+    </div>
+
+    <button onclick="addItem()">Add Item</button>
+    <button onclick="modifyItem()">Modify First Item</button>
+    <button onclick="removeItem()">Remove Last Item</button>
+
+    <!-- JavaScript -->
+    <script>
+        const container = document.getElementById("container");
+
+        // Append (Create & Add)
+        function addItem() {
+            const newElement = document.createElement("p");
+            newElement.className = "item";
+            newElement.innerHTML = "New Item Added";
+            container.appendChild(newElement);
+        }
+
+        // Modify child node
+        function modifyItem() {
+            if (container.children.length > 0) {
+                container.children[0].innerHTML = "First Item Modified";
+                container.children[0].style.background = "#c8e6c9";
+            }
+        }
+
+        // Remove child node
+        function removeItem() {
+            if (container.children.length > 0) {
+                container.removeChild(container.lastElementChild);
+            }
+        }
+    </script>
+
+</body>
+</html>

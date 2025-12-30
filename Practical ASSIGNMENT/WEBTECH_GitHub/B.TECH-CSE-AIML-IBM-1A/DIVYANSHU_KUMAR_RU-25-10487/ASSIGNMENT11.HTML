@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FizzBuzz Program</title>
+
+    <!-- Minimal CSS -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        #output {
+            background: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            max-width: 300px;
+            margin: auto;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>FizzBuzz Output (1 to 100)</h2>
+
+    <div id="output"></div>
+
+    <!-- JavaScript -->
+    <script>
+        const outputDiv = document.getElementById("output");
+
+        for (let i = 1; i <= 100; i++) {
+            let result = "";
+
+            if (i % 3 === 0 && i % 5 === 0) {
+                result = "FizzBuzz";
+            } else if (i % 3 === 0) {
+                result = "Fizz";
+            } else if (i % 5 === 0) {
+                result = "Buzz";
+            } else {
+                result = i;
+            }
+
+            outputDiv.innerHTML += result + "<br>";
+        }
+    </script>
+
+</body>
+</html>

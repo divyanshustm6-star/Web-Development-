@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Duck Number Checker</title>
+
+    <!-- Minimal CSS -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            padding: 20px;
+            text-align: center;
+        }
+
+        input, button {
+            padding: 8px;
+            margin: 5px;
+        }
+
+        #result {
+            margin-top: 15px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Duck Number Checker</h2>
+
+    <input type="number" id="num" placeholder="Enter a number">
+    <button onclick="checkDuck()">Check</button>
+
+    <div id="result"></div>
+
+    <!-- JavaScript -->
+    <script>
+        function checkDuck() {
+            let num = document.getElementById("num").value;
+            let resultDiv = document.getElementById("result");
+
+            if (num === "") {
+                resultDiv.innerText = "Please enter a number.";
+                return;
+            }
+
+            // Convert to string
+            let str = num.toString();
+
+            // Check first digit is not 0 and contains 0 elsewhere
+            if (str[0] !== "0" && str.includes("0")) {
+                resultDiv.innerText = "Duck Number";
+            } else {
+                resultDiv.innerText = "Not a Duck Number";
+            }
+        }
+    </script>
+
+</body>
+</html>

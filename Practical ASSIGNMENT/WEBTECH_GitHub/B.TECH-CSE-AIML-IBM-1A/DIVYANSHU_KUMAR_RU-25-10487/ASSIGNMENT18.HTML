@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fibonacci Series</title>
+
+    <!-- Minimal CSS -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            padding: 20px;
+            text-align: center;
+        }
+
+        input, button {
+            padding: 8px;
+            margin: 5px;
+        }
+
+        #output {
+            margin-top: 15px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Fibonacci Series up to n Terms</h2>
+
+    <input type="number" id="num" placeholder="Enter number of terms" min="1">
+    <button onclick="printFibonacci()">Generate</button>
+
+    <div id="output"></div>
+
+    <!-- JavaScript -->
+    <script>
+        function printFibonacci() {
+            let n = document.getElementById("num").value;
+            let outputDiv = document.getElementById("output");
+
+            if (n === "" || n <= 0) {
+                outputDiv.innerText = "Please enter a valid positive number.";
+                return;
+            }
+
+            let a = 0, b = 1;
+            let result = "";
+
+            for (let i = 1; i <= n; i++) {
+                result += a + " ";
+                let next = a + b;
+                a = b;
+                b = next;
+            }
+
+            outputDiv.innerText = result;
+        }
+    </script>
+
+</body>
+</html>

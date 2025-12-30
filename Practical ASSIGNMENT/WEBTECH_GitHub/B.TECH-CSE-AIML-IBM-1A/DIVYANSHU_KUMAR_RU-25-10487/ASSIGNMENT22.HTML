@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Names</title>
+</head>
+<body>
+
+<h3>Students in Alphabetical Order</h3>
+<p id="output"></p>
+
+<script>
+    // Store student names in an array
+    let students = ["Divyanshu", "Aryan", "sameer", "karan", "Nitin"];
+
+    // Sort the array alphabetically
+    students.sort();
+
+    // Display the sorted names
+    document.getElementById("output").innerHTML = students.join("<br>");
+</script>
+
+</body>
+</html>
