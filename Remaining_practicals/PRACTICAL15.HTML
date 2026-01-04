@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM Manipulation Demo</title>
+
+    <!-- Minimal CSS -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .box {
+            background: #fff;
+            padding: 15px;
+            margin: 10px auto;
+            width: 300px;
+            border-radius: 5px;
+        }
+
+        button {
+            padding: 8px 12px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>DOM Manipulation Example</h2>
+
+    <!-- Element with ID -->
+    <div id="idBox" class="box">This text will change using getElementById()</div>
+
+    <!-- Element with class -->
+    <div class="box">This text will change using querySelector()</div>
+
+    <button onclick="changeContent()">Click Me</button>
+
+    <!-- JavaScript -->
+    <script>
+        function changeContent() {
+
+            // Using getElementById()
+            document.getElementById("idBox").innerHTML =
+                "Content changed using <b>getElementById()</b>";
+
+            // Using querySelector()
+            document.querySelector(".box:nth-of-type(2)").innerHTML =
+                "Content changed using <b>querySelector()</b>";
+        }
+    </script>
+
+</body>
+</html>

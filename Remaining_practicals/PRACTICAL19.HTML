@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Canvas Drawing Example</title>
+
+    <!-- Minimal CSS -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            padding: 20px;
+            text-align: center;
+        }
+
+        canvas {
+            border: 2px solid #333;
+            background: #fff;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Canvas Drawing: Shapes & Colors</h2>
+
+    <canvas id="myCanvas" width="400" height="300"></canvas>
+
+    <!-- JavaScript -->
+    <script>
+        const canvas = document.getElementById("myCanvas");
+        const ctx = canvas.getContext("2d");
+
+        // Draw Rectangle
+        ctx.fillStyle = "skyblue";
+        ctx.fillRect(20, 20, 120, 80);
+
+        // Draw Circle
+        ctx.beginPath();
+        ctx.arc(250, 70, 40, 0, 2 * Math.PI);
+        ctx.fillStyle = "orange";
+        ctx.fill();
+
+        // Draw Line
+        ctx.beginPath();
+        ctx.moveTo(50, 150);
+        ctx.lineTo(350, 150);
+        ctx.strokeStyle = "green";
+        ctx.lineWidth = 4;
+        ctx.stroke();
+
+        // Draw Triangle
+        ctx.beginPath();
+        ctx.moveTo(200, 200);
+        ctx.lineTo(150, 260);
+        ctx.lineTo(250, 260);
+        ctx.closePath();
+        ctx.fillStyle = "purple";
+        ctx.fill();
+    </script>
+
+</body>
+</html>
